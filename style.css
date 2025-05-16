@@ -173,13 +173,13 @@ section {
 /* --- Header --- */
 header {
     background-color: rgba(10, 25, 47, 0.85); /* Semi-transparent dark blue */
-    padding: 15px 0;
+    padding: 0.75rem 0; /* Reduced vertical padding. Was likely 15px or similar. Adjust 0.75rem as needed (e.g., 0.5rem, 10px) */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px); /* Frosted glass effect */
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
@@ -190,8 +190,15 @@ header .container {
 }
 
 #logo {
-    height: 45px; /* Adjust as needed */
+    height: 4rem;
+    width: 5rem;  
     filter: brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(130deg) brightness(1.2); /* Makes it cyan-ish */
+    display: block; /* Ensures it behaves predictably */
+}
+
+a.logo-link { /* The <a> tag wrapping your logo */
+    display: inline-flex; /* Helps to tightly wrap the image */
+    align-items: center;
 }
 
 header nav ul {
