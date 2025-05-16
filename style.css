@@ -1,0 +1,560 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #8C3B00; /* Maroon/Deep Saffron */
+    --secondary-color: #FFD700; /* Gold */
+    --accent-color: #D46A00; /* Saffron */
+    --light-bg: #FFF8E1; /* Ivory/Cream */
+    --text-color: #4A2E20; /* Dark Brown */
+    --light-text: #FAF0E6; /* Lighter ivory for dark backgrounds */
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Lora', serif;
+    --font-body: 'Noto Serif', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from AOS */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    color: var(--primary-color);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; text-align: center; margin-bottom: 40px; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.3em; color: var(--accent-color); }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: var(--font-secondary);
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px; /* spacing between buttons */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-bg);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-bg);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+
+/* --- Header --- */
+header {
+    background-color: rgba(255, 248, 225, 0.9); /* Semi-transparent Ivory */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    height: 50px; /* Adjust as needed */
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1em;
+    padding: 5px 0;
+    position: relative;
+}
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 2px;
+    right: 0;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+header nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--accent-color);
+}
+header nav ul li a:hover {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: url('assets/images/hero-background.jpg') no-repeat center center/cover; /* Replace with your image */
+    color: var(--light-text); /* Assuming dark background image */
+    padding-top: 80px; /* Account for fixed header */
+}
+.hero-section::before { /* Overlay for better text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 46, 32, 0.5); /* Dark Brown overlay */
+}
+
+#threejs-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind hero-content */
+}
+
+.hero-content {
+    position: relative; /* To be above overlay and threejs */
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    color: var(--secondary-color); /* Gold for main heading */
+    font-size: 3.5em;
+    margin-bottom: 0.3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    font-family: var(--font-secondary);
+    margin-bottom: 1.5em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-content .btn-primary {
+    padding: 15px 35px;
+    font-size: 1.1em;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+.hero-content .btn-primary:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
+
+/* --- About Us Section --- */
+.about-section {
+    background-color: #fff; /* Slightly different from main bg for contrast */
+}
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+.about-text ul {
+    list-style: '🕉️ '; /* Or use ::before with content */
+    padding-left: 20px;
+}
+.about-text ul li {
+    margin-bottom: 0.5em;
+    font-family: var(--font-secondary);
+}
+.about-image { /* If you add an image */
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Products Section --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For coming-soon tag */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(140, 59, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover, contain, etc. */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 0.95em;
+    min-height: 60px; /* Prevent layout shifts due to varying text length */
+}
+
+.product-links {
+    margin-top: 15px;
+}
+.product-links .btn {
+    margin-bottom: 5px; /* Stack buttons nicely if they wrap */
+}
+
+
+/* --- Upcoming Products Section --- */
+.upcoming-section {
+    background-color: #fdf5e8; /* Slightly different warm tone */
+}
+.coming-soon-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    border-radius: 3px;
+    font-family: var(--font-secondary);
+}
+.product-card.coming-soon {
+    opacity: 0.7;
+}
+.product-card.coming-soon h4 {
+    color: #777; /* Greyed out title */
+}
+
+
+/* --- Festivals Section --- */
+.festivals-section {
+    text-align: center;
+    background: linear-gradient(to bottom, var(--light-bg), #fff);
+}
+.festival-list {
+    margin: 30px auto;
+    padding: 0;
+    max-width: 400px;
+}
+.festival-list li {
+    font-family: var(--font-secondary);
+    font-size: 1.2em;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    border-radius: 0 4px 4px 0;
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    background-color: #fff;
+}
+.placeholder-text {
+    font-style: italic;
+    color: #777;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--light-bg); /* Match body or use a subtle texture */
+}
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.contact-info, .contact-message {
+    flex: 1;
+    min-width: 300px;
+}
+.contact-info h3, .contact-message h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.contact-info p {
+    margin-bottom: 10px;
+    font-family: var(--font-secondary);
+}
+.contact-info p a {
+    color: var(--text-color);
+}
+.contact-info p a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--text-color);
+    color: var(--light-text);
+    padding: 40px 0 20px;
+    text-align: center;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-social {
+    margin-bottom: 20px;
+}
+.footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+}
+.footer-social img {
+    width: 28px; /* Adjust size of social icons */
+    height: 28px;
+    filter: invert(90%) sepia(15%) saturate(300%) hue-rotate(340deg) brightness(100%) contrast(90%); /* Makes them light */
+    transition: transform 0.3s ease;
+}
+.footer-social img:hover {
+    transform: scale(1.1);
+    filter: invert(80%) sepia(60%) saturate(1500%) hue-rotate(350deg) brightness(100%) contrast(100%); /* Goldish hover */
+}
+footer p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+.footer-links a {
+    color: var(--light-text);
+    margin: 0 8px;
+    font-size: 0.9em;
+}
+.footer-links a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* --- Mobile Navigation --- */
+.nav-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Above nav */
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+/* Active state for hamburger */
+.nav-open .hamburger { background: transparent; }
+.nav-open .hamburger::before { transform: rotate(45deg) translate(5px, 6px); }
+.nav-open .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    .hero-content h1 { font-size: 2.5em; }
+    .hero-content p { font-size: 1.1em; }
+    h2 { font-size: 1.8em; }
+
+    header nav {
+        position: absolute;
+        top: 100%; /* Below the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 248, 225, 0.98);
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+    header nav.nav-open {
+        max-height: 500px; /* Or enough to show all items */
+        padding-bottom: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+    header nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+    header nav ul li a::after { display: none; /* Simpler on mobile */ }
+
+
+    .nav-toggle {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+    .about-image {
+        margin-top: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
+
+/* --- Utilities for Animations etc. --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}

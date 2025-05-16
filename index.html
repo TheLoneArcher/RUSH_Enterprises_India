@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUSH Enterprises - Bringing Devotion Home</title>
+    <meta name="description" content="Premium Hindu idols, diyas & sacred items for your home and heart. Explore RUSH Enterprises' devotional products.">
+    <meta name="keywords" content="Hindu idols, diyas, pooja items, devotional products, RUSH Enterprises, home decor, Indian spirituality">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon (replace with your actual favicon) -->
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="#home" class="logo-link">
+                <img src="assets/images/logo.png" alt="RUSH Enterprises Logo" id="logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#upcoming">Upcoming</a></li>
+                    <li><a href="#festivals">Festivals</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div id="threejs-container"></div> <!-- Three.js canvas will go here -->
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Bringing Devotion Home</h1>
+            <p>Premium Hindu idols, diyas & sacred items for your home and heart.</p>
+            <a href="#products" class="btn btn-primary">Browse Products</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>RUSH Enterprises is a devotional lifestyle brand based in India. We offer handcrafted Hindu idols and pooja essentials designed to bring spirituality and tradition into modern homes. With an expanding product line and a commitment to cultural authenticity, we aim to make sacred items more accessible for every household.</p>
+                    <ul>
+                        <li>Artisan-made products</li>
+                        <li>Ethically sourced</li>
+                        <li>PAN India shipping</li>
+                        <li>Festival collections</li>
+                    </ul>
+                </div>
+                <!-- Optional: Add an image here if you like -->
+                <!-- <img src="assets/images/about-us-image.jpg" alt="Craftsmanship at RUSH Enterprises" class="about-image"> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Our Products</h2>
+            <h3 data-aos="fade-up" data-aos-delay="100">Currently Available</h3>
+            <div class="product-grid">
+                <!-- Product 1: Devotional Idols -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/images/idol-placeholder.jpg" alt="Devotional Idols">
+                    <h4>🪔 Devotional Idols</h4>
+                    <p>Handcrafted idols of Ganesha, Lakshmi, Krishna, and more, embodying divine presence.</p>
+                    <div class="product-links">
+                        <!-- Example: Update with actual links -->
+                        <!-- <a href="[AMAZON_IDOL_LINK]" target="_blank" class="btn btn-secondary">Buy on Amazon</a> -->
+                        <!-- <a href="[FLIPKART_IDOL_LINK]" target="_blank" class="btn btn-secondary">Buy on Flipkart</a> -->
+                        <a href="https://wa.me/919790613379?text=I'm%20interested%20in%20your%20Devotional%20Idol%20collection." target="_blank" class="btn btn-primary">View Idol Collection</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Diyas & Lamps -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/images/diya-placeholder.jpg" alt="Diyas & Lamps">
+                    <h4>🔥 Diyas & Lamps</h4>
+                    <p>Traditional clay, brass, and designer diyas to illuminate your sacred spaces.</p>
+                     <div class="product-links">
+                        <!-- Example: Update with actual links -->
+                        <!-- <a href="[AMAZON_DIYA_LINK]" target="_blank" class="btn btn-secondary">Buy on Amazon</a> -->
+                        <a href="https://wa.me/919790613379?text=I'm%20interested%20in%20your%20Diya%20collection." target="_blank" class="btn btn-primary">View Diya Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Products Section -->
+    <section id="upcoming" class="upcoming-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Coming Soon</h2>
+            <div class="product-grid">
+                <!-- Upcoming 1: Home Decor -->
+                <div class="product-card coming-soon" data-aos="fade-up" data-aos-delay="100">
+                    <div class="coming-soon-tag">Coming Soon</div>
+                    <!-- <img src="assets/images/home-decor-placeholder.jpg" alt="Home Decor"> -->
+                    <h4>🏠 Home Decor</h4>
+                    <p>Spiritually inspired decor items to sanctify your living spaces.</p>
+                    <a href="https://wa.me/919790613379?text=Notify%20me%20about%20Home%20Decor%20products." target="_blank" class="btn btn-secondary">Notify Me</a>
+                </div>
+
+                <!-- Upcoming 2: Traditional Clothing -->
+                <div class="product-card coming-soon" data-aos="fade-up" data-aos-delay="200">
+                    <div class="coming-soon-tag">Coming Soon</div>
+                    <h4>👗 Traditional Clothing</h4>
+                    <p>Elegant and comfortable ethnic wear for festive occasions and daily devotion.</p>
+                    <a href="https://wa.me/919790613379?text=Notify%20me%20about%20Traditional%20Clothing." target="_blank" class="btn btn-secondary">Notify Me</a>
+                </div>
+
+                <!-- Upcoming 3: Story Books -->
+                <div class="product-card coming-soon" data-aos="fade-up" data-aos-delay="300">
+                    <div class="coming-soon-tag">Coming Soon</div>
+                    <h4>📚 Story Books</h4>
+                    <p>Inspiring mythological tales and spiritual stories for all ages.</p>
+                    <a href="https://wa.me/919790613379?text=Notify%20me%20about%20Story%20Books." target="_blank" class="btn btn-secondary">Notify Me</a>
+                </div>
+
+                <!-- Upcoming 4: Stationery -->
+                <div class="product-card coming-soon" data-aos="fade-up" data-aos-delay="400">
+                    <div class="coming-soon-tag">Coming Soon</div>
+                    <h4>✍️ Stationery</h4>
+                    <p>Beautifully designed journals, planners, and cards with a devotional touch.</p>
+                    <a href="https://wa.me/919790613379?text=Notify%20me%20about%20Stationery%20products." target="_blank" class="btn btn-secondary">Notify Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festivals Section -->
+    <section id="festivals" class="festivals-section">
+        <div class="container" data-aos="fade-up">
+            <h2>Upcoming Campaigns & Festivals</h2>
+            <ul class="festival-list">
+                <li>Diwali Collection – Oct</li>
+                <li>Navratri Specials – Sept</li>
+                <li>Raksha Bandhan Gifts – Aug</li>
+            </ul>
+            <a href="[INSTAGRAM_LINK_UPDATE_ME]" target="_blank" class="btn btn-primary">Follow us on Instagram for updates</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Placeholder) -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container" data-aos="fade-up">
+            <h2>What Our Devotees Say</h2>
+            <p class="placeholder-text">Customer testimonials coming soon. We are grateful for the love and support!</p>
+            <!-- Future structure:
+            <div class="testimonial-slider">
+                <div class="testimonial-item">
+                    <p>"Amazing quality idols! Transformed my pooja room."</p>
+                    <h4>- A Happy Customer</h4>
+                </div>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Contact & Inquiry Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-info">
+                    <h3>Quick Contact Info</h3>
+                    <p>📞 Phone: <a href="tel:+919790613379">+91-9790613379</a></p>
+                    <p>📧 Email: <a href="mailto:rushenterprisesindia@gmail.com">rushenterprisesindia@gmail.com</a></p>
+                    <p>📲 WhatsApp: <a href="https://wa.me/919790613379?text=Hello%20RUSH%20Enterprises,%20I%20have%20an%20inquiry." target="_blank">Chat with us</a></p>
+                    <p>📍 Location: India | PAN India Shipping</p>
+                </div>
+                <div class="contact-message">
+                     <h3>Send us a Message or Order Query</h3>
+                     <p>For inquiries, bulk orders, or specific requests, please reach out to us via Email or WhatsApp. We're here to assist you!</p>
+                     <a href="mailto:rushenterprisesindia@gmail.com" class="btn btn-primary">Email Us</a>
+                     <a href="https://wa.me/919790613379?text=Hello%20RUSH%20Enterprises,%20I%20have%20an%20order%20query." target="_blank" class="btn btn-secondary">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="[INSTAGRAM_LINK_UPDATE_ME]" target="_blank" title="Instagram"><img src="assets/images/icon-instagram.svg" alt="Instagram"></a>
+                    <a href="[FACEBOOK_LINK_UPDATE_ME]" target="_blank" title="Facebook"><img src="assets/images/icon-facebook.svg" alt="Facebook"></a>
+                    <a href="[LINKEDIN_LINK_UPDATE_ME]" target="_blank" title="LinkedIn"><img src="assets/images/icon-linkedin.svg" alt="LinkedIn"></a>
+                    <a href="[X_TWITTER_LINK_UPDATE_ME]" target="_blank" title="X (Twitter)"><img src="assets/images/icon-x.svg" alt="X"></a>
+                </div>
+                <p>© 2024 RUSH Enterprises. All Rights Reserved. Crafted with devotion.</p>
+                <nav class="footer-links">
+                    <a href="#privacy">Privacy Policy</a> |
+                    <a href="#terms">Terms & Conditions</a> |
+                    <a href="#returns">Returns Policy</a>
+                    <!-- Note: Create actual pages or sections for these if needed, or link to placeholder sections -->
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Optional: GLTFLoader if you use GLTF models -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script> -->
+    <script src="main.js"></script>
+</body>
+</html>
